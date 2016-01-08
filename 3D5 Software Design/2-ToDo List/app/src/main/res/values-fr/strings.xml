@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ListeDeChosesÀFaire</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="title">Liste De Choses À Faire</string>
+    <string name="newTask">Ajouter Une Nouvelle Tâche</string>
+    <string name="newDueDate">jj/mm</string>
+    <string name="newDescription">description</string>
+    <string name="addNewTask">Ajouter</string>
+    <string name="dueDate">Date</string>
+    <string name="description">Description</string>
+    <string name="completedyorn">Achevé?</string>
+    <string name="clearCompleted">Effacer</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="memo">Memo</string>
+    <string name="notes">notes</string>
+    <string name="enterNote">Entrer une note</string>
+</resources>

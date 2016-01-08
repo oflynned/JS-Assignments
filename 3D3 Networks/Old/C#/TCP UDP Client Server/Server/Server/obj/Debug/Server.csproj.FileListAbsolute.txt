@@ -1,0 +1,12 @@
+c:\users\ed\documents\visual studio 2013\Projects\Server\Server\bin\Debug\Server.exe.config
+c:\users\ed\documents\visual studio 2013\Projects\Server\Server\bin\Debug\Server.exe
+c:\users\ed\documents\visual studio 2013\Projects\Server\Server\bin\Debug\Server.pdb
+c:\users\ed\documents\visual studio 2013\Projects\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+c:\users\ed\documents\visual studio 2013\Projects\Server\Server\obj\Debug\Server.exe
+c:\users\ed\documents\visual studio 2013\Projects\Server\Server\obj\Debug\Server.pdb
+C:\Users\Ed\Documents\Visual Studio 2013\Projects\CS3D3_proj1\Server\Server\bin\Debug\Server.exe.config
+C:\Users\Ed\Documents\Visual Studio 2013\Projects\CS3D3_proj1\Server\Server\obj\Debug\Server.exe
+C:\Users\Ed\Documents\Visual Studio 2013\Projects\CS3D3_proj1\Server\Server\obj\Debug\Server.pdb
+C:\Users\Ed\Documents\Visual Studio 2013\Projects\CS3D3_proj1\Server\Server\bin\Debug\Server.exe
+C:\Users\Ed\Documents\Visual Studio 2013\Projects\CS3D3_proj1\Server\Server\bin\Debug\Server.pdb
+C:\Users\Ed\Documents\Visual Studio 2013\Projects\CS3D3_proj1\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache

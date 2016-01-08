@@ -1,0 +1,27 @@
+\BOOKMARK [1][-]{section*.1}{References}{}% 1
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 2
+\BOOKMARK [2][-]{subsection.1.1}{What is Monopoly?}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.2}{Rules}{section.1}% 4
+\BOOKMARK [1][-]{section.2}{Model \046 Simulation}{}% 5
+\BOOKMARK [2][-]{subsection.2.1}{Dice Rolls}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Chance and Community Chests}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Chance Cards}{subsection.2.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Community Chest Cards}{subsection.2.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Exploitation}{subsection.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.3}{Jail}{section.2}% 11
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Increasing Odds}{subsection.2.3}% 12
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Paradigm}{subsection.2.3}% 13
+\BOOKMARK [1][-]{section.3}{Markov Chains}{}% 14
+\BOOKMARK [2][-]{subsection.3.1}{What is a Markov Chain?}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.2}{Parametrisation}{section.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Transition Matrices}{subsection.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.3}{Seeded Matrices}{section.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Assumptions}{subsection.3.3}% 19
+\BOOKMARK [2][-]{subsection.3.4}{Simulation}{section.3}% 20
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Set Up}{subsection.3.4}% 21
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Aspects}{subsection.3.4}% 22
+\BOOKMARK [2][-]{subsection.3.5}{Tile Probabilities}{section.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Probabilistic Outcome}{subsection.3.5}% 24
+\BOOKMARK [2][-]{subsection.3.6}{Further Expansion}{section.3}% 25
+\BOOKMARK [1][-]{section.4}{Conclusion}{}% 26
+\BOOKMARK [1][-]{section.5}{Bibliography}{}% 27

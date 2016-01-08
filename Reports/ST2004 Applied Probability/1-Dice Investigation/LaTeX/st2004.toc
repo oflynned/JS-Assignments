@@ -1,0 +1,17 @@
+\select@language {english}
+\contentsline {section}{References}{1}
+\contentsline {section}{\numberline {1}Q1i: Simulation of Probability Distributions}{1}
+\contentsline {subsection}{\numberline {1.1}Graphs}{1}
+\contentsline {section}{\numberline {2}Q1ii: Probability Distributions}{4}
+\contentsline {subsection}{\numberline {2.1}Probability Distribution}{4}
+\contentsline {subsection}{\numberline {2.2}Multinomial Theorem}{4}
+\contentsline {subsection}{\numberline {2.3}Expected Value and Variance}{5}
+\contentsline {subsection}{\numberline {2.4}Covariance}{6}
+\contentsline {subsection}{\numberline {2.5}Long Run Expected Values and Variances}{6}
+\contentsline {section}{\numberline {3}Q1iii: Law of Large Numbers}{7}
+\contentsline {subsection}{\numberline {3.1}Converging}{7}
+\contentsline {section}{\numberline {4}Q2: Martingale-Roulette Investigation}{8}
+\contentsline {subsection}{\numberline {4.1}Martingale Strategies}{8}
+\contentsline {subsection}{\numberline {4.2}Payoff}{8}
+\contentsline {subsection}{\numberline {4.3}Simulation}{8}
+\contentsline {subsection}{\numberline {4.4}Conclusion}{10}

@@ -1,0 +1,29 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {subsection}{\numberline {1.1}What is Monopoly?}{1}
+\contentsline {subsection}{\numberline {1.2}Rules}{1}
+\contentsline {section}{\numberline {2}Model \& Simulation Background Theory}{2}
+\contentsline {subsection}{\numberline {2.1}Dice Rolls}{2}
+\contentsline {subsection}{\numberline {2.2}Chance and Community Chests}{4}
+\contentsline {subsubsection}{\numberline {2.2.1}Chance Cards}{4}
+\contentsline {subsubsection}{\numberline {2.2.2}Community Chest Cards}{5}
+\contentsline {subsubsection}{\numberline {2.2.3}Exploitation}{5}
+\contentsline {subsection}{\numberline {2.3}Jail}{6}
+\contentsline {subsubsection}{\numberline {2.3.1}Increasing Odds}{6}
+\contentsline {subsubsection}{\numberline {2.3.2}Paradigm}{6}
+\contentsline {section}{\numberline {3}Markov Chains}{7}
+\contentsline {subsection}{\numberline {3.1}What is a Markov Chain?}{7}
+\contentsline {subsection}{\numberline {3.2}Parametrisation}{8}
+\contentsline {subsubsection}{\numberline {3.2.1}Transition Matrices}{8}
+\contentsline {subsubsection}{\numberline {3.2.2}Simplified Chains}{8}
+\contentsline {subsection}{\numberline {3.3}Seeded Matrices}{10}
+\contentsline {subsubsection}{\numberline {3.3.1}Assumptions}{10}
+\contentsline {subsection}{\numberline {3.4}Simulation}{10}
+\contentsline {subsubsection}{\numberline {3.4.1}Set Up}{10}
+\contentsline {subsubsection}{\numberline {3.4.2}Aspects}{10}
+\contentsline {subsection}{\numberline {3.5}Tile Probabilities}{11}
+\contentsline {subsubsection}{\numberline {3.5.1}Probabilistic Outcome}{11}
+\contentsline {subsection}{\numberline {3.6}Further Expansion}{12}
+\contentsline {section}{\numberline {4}Conclusion}{13}
+\contentsline {section}{\numberline {5}Bibliography}{13}
+\contentsline {section}{\numberline {6}Source Code}{13}

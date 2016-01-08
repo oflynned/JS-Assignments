@@ -1,0 +1,33 @@
+\select@language {english}
+\contentsline {section}{References}{1}
+\contentsline {section}{\numberline {1}Abstract}{1}
+\contentsline {section}{\numberline {2}BJT Current - Voltage Characteristics}{1}
+\contentsline {subsection}{\numberline {2.1}Theory}{1}
+\contentsline {subsubsection}{\numberline {2.1.1}What is a Bipolar Junction Transistor?}{1}
+\contentsline {subsubsection}{\numberline {2.1.2}Worked Example}{1}
+\contentsline {subsubsection}{\numberline {2.1.3}Semiconductor Doping}{2}
+\contentsline {subsubsection}{\numberline {2.1.4}PNP \& NPN}{3}
+\contentsline {subsection}{\numberline {2.2}Terminology}{3}
+\contentsline {subsubsection}{\numberline {2.2.1}Applied Electricity}{3}
+\contentsline {subsubsection}{\numberline {2.2.2}Semiconductor Theory}{3}
+\contentsline {section}{\numberline {3}Current vs Base-Emitter Voltages}{5}
+\contentsline {subsection}{\numberline {3.1}Method}{5}
+\contentsline {subsection}{\numberline {3.2}Simulation}{6}
+\contentsline {subsection}{\numberline {3.3}Results}{6}
+\contentsline {section}{\numberline {4}Collector Current vs Collector-Emitter Voltage}{7}
+\contentsline {subsection}{\numberline {4.1}Method}{7}
+\contentsline {subsection}{\numberline {4.2}Simulation}{7}
+\contentsline {subsection}{\numberline {4.3}Results}{7}
+\contentsline {section}{\numberline {5}Resistively Loaded Transfer Characteristics}{8}
+\contentsline {subsection}{\numberline {5.1}Method}{8}
+\contentsline {subsection}{\numberline {5.2}Simulation}{8}
+\contentsline {subsection}{\numberline {5.3}Results}{9}
+\contentsline {section}{\numberline {6}Switching Characteristics}{9}
+\contentsline {subsection}{\numberline {6.1}Method}{9}
+\contentsline {subsection}{\numberline {6.2}Simulation}{10}
+\contentsline {subsection}{\numberline {6.3}Results}{10}
+\contentsline {section}{\numberline {7}Discussion}{12}
+\contentsline {section}{\numberline {8}Conclusion}{13}
+\contentsline {subsection}{\numberline {8.1}Findings}{13}
+\contentsline {subsection}{\numberline {8.2}Issues for Consideration}{13}
+\contentsline {section}{\numberline {9}Bibliography}{14}
