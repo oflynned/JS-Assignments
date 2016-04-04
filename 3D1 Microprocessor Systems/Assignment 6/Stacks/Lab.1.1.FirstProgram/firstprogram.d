@@ -1,1 +1,0 @@
-.\firstprogram.o: FirstProgram.s

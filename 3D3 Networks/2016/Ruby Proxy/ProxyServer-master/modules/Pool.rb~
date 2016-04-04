@@ -1,0 +1,120 @@
+require 'socket'
+require 'openssl'
+require 'uri'
+require 'thread'
+
+class Pool
+	MAX_THREADS = 64
+
+  def initialize()
+    @connections = 0
+		@threads = Array.new(MAX_THREADS)
+		
+		@block = Block.new
+		@http_req = HTTP_Req.new
+		@https_req = HTTPS_Req.new
+  end
+  
+  def pool_conn(socket, socket_ssl)
+	  @socket = socket.accept
+	  @socket_ssl = socket_ssl
+	  
+	  @threads.push(Thread.new(@socket) do |client_s|
+	  	begin
+				#request details	
+				request = client_s.gets
+				url = Helpers.url(request)
+				uri = URI.parse(url)
+				type = Helpers.retrieve_type(url)
+				verb = Helpers.verb(request)
+				version = Helpers.version(request)
+				folder_name = Helpers.splice_url(Helpers.get_url(request))
+				raw_name = Helpers.retrieve_stripped(folder_name)
+				
+	    	puts(verb + " " + url)
+	    	if verb.eql? "GET"
+				  return_to_client(uri, url, verb, version, request, client_s)
+			  else
+			    @https_req.retrieve_page(@socket_ssl)
+			  end
+			end
+		end)
+  end
+  
+  def return_to_client(uri, url, verb, version, request, client_s)
+    puts "Creating new connection in thread pool"
+    @connections += 1
+    puts "Connections in pool: #{@connections}"
+    puts request
+    @req_uri = request
+    
+    puts uri
+    puts request
+		puts verb
+		
+		#check blacklist first
+		if not request.nil?
+			is_blocked = Helpers.read_blacklist.include? "#{uri}"
+
+			if verb.eql? "GET" or verb.eql? "POST"
+			##
+			# HTTP handling here on port 80
+			  puts "HTTP request filtered" 
+			  if is_blocked
+			    puts "Request to #{uri} has been blacklisted!"
+			    @block.block_req(@req_uri, client_s, false)
+			  else  
+			    puts "HTTP request to #{uri} has been whitelisted!"
+					##
+					# instantiate HTTP req
+			    @http_req.retrieve_page(client_s, uri, verb, version)
+			  end
+			##
+			# SSL handling here on port 443 with certs
+			elsif verb.eql? "CONNECT"
+			  puts "SSL request filtered!"
+			  if is_blocked
+			    puts "Request to #{uri} has been blacklisted!"
+			    @block.block_req(@req_uri, client_s, true)
+			  else
+			    puts "SSL request to #{uri} has been whitelisted!"
+			  	@https_req.retrieve_page(client_s, url, verb, version, request)
+			  end
+			end
+		end
+	end
+  
+  def self.num_conns
+    @connections
+  end
+  
+  def auto_clean_conns
+  	count = 0
+  	@threads.each do |element|
+  		if not element.nil?
+  			count += 1
+  		end
+  	end
+  	
+  	if count == 1
+  		puts "#{count} connection active in the pool"
+  	else 	
+	  	puts "#{count} connections active in the pool"
+  	end
+  	
+  	if count < MAX_THREADS
+			id = 0
+			@threads.each do |t|
+				id += 1
+				if !t.nil?
+					if !t.alive? 
+						t.join
+						@threads.pop(id)
+					end
+				end
+			end
+  	else
+  		sleep 1 
+  	end
+	end
+end

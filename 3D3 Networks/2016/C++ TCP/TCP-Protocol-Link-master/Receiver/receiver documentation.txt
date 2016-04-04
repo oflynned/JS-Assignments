@@ -1,0 +1,84 @@
+string get_allocated_ip(struct sockaddr_in addr);
+Takes the given socket address struct passed, and returns its IPv4 equivalent for the given machine.
+
+@param struct sockaddr_in addr -> AF_INET representation of the allocated socket address.
+@return a character array of IPv4 type for the machine's local address
+
+bitset<TRAILER_SIZE_BITS> generate_trailer(string data);
+A top level, cascading function which relies on the output of its child functions in order to act as a parent, encapsulating function which invokes trailer checksum generation through taking returned values as the parent function's parameter. Beforehand, the function prepares the data to be passed by reverse-encoding the data passed into the appropriate representation of binary from ascii.
+
+@usage return bitset<TRAILER_SIZE_BITS>(gremlin_checksum(generate_checksum(data_concat, data_concat.length())));
+@param string data -> the data to be packaged
+@return the checksum given the output of the other parameters in a cascading format
+
+string analyse_integrity(string data, string trailer);
+Returns whether or not the checksum matches the integrity for the given payload in the data packet with GOOD or BAD.
+
+@param string data -> data to be examined for its integrity
+@param string trailer -> given checksum parametrised for data integrity checking
+
+void start_listener();
+Kills any open sockets and starts a UDP listener with a bind to a given server IP and port.
+
+@throws exception on incorrect binding
+@param null
+@return null
+
+void receive_data();
+Initialises a listener that receives from a source over the UDP protocol, and accesses data received that is saved under header, data and trailer given certain lengths. Also displays information of given packet to the UI.
+
+@param null
+@return null
+
+void echo(string result);
+Calls an initialiseation of echo to the client of either GOOD or BAD integrity, invoking reinitialisaiton of transmission or incrementation of packet transmission.
+
+@throws exception on send error
+@param string result -> result of GOOD or BAD for client reception
+@return null
+
+void close_connection();
+Kills any connection on the given socket.
+
+@param null
+@return null
+
+void start_echo();
+Kills the current connection and reinitialises to an inverse client-server relationship where the server returns a message to the client of the packet's integrity.
+
+@param null
+@return null
+
+void save_to_file(string data);
+Saves the input from transmission via a buffer to file having displayed its contents to screen.
+
+@throws exception on incorrect file saving
+@param string data ->
+@return null
+
+static int binary_to_dec(string sequenceNumber);
+Helper to convert binary data to a decimal representation from the packet.
+
+@param string sequenceNumber -> binary sequence number to be converted to decimal representation
+@return the decimal representation of the binary string passed via parametrisation
+
+bitset<16> generate_checksum(string data, int length);
+Generates a given checksum on the server side for comparison with the packaged trailer encapsulated in the data frame.
+
+@param string data -> alphanumeric characters to have a checksum generated for
+@param int length -> length of data 
+@return the checksum for the given character data
+
+bool hasEnding (string const &data, string const &regex);
+Boolean test to return whether or not the current string contains the given regex for the given string
+
+@param string data -> data to be analysed for string regex
+@param string regex -> regex for analysis
+@return true given the regex exists at the end of the given string
+
+string unstuff_bits(string data);
+Takes the parameter of a string to be unstuffed and returns the string in its unstuffed format ready for interpretation with a given redundancy.
+
+@usage "01111010" -> "0111110"
+@param data -> stuffed data to be unstuffed
+@return the unstuffed data in raw format

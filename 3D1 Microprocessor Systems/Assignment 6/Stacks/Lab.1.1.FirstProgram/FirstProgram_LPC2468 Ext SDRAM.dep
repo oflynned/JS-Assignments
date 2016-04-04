@@ -1,3 +1,0 @@
-Dependencies for Project 'FirstProgram', Target 'LPC2468 Ext SDRAM': (DO NOT MODIFY !)
-F (.\FirstProgram.s)(0x56B4BD8A)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--pd "NO_CLOCK_SETUP SETA 1" --pd "NO_EMC_SETUP SETA 1" --pd "RAM_INTVEC SETA 1" --pd "RAM_MODE SETA 1" --pd "REMAP SETA 1" --list .\firstprogram.lst --xref -o .\firstprogram.o --depend .\firstprogram.d)
-F (..\libcs1021\libcs1021.lib)(0x4C553688)()

@@ -1,0 +1,145 @@
+struct DATA_PACKET { ... };
+
+Contains information of each part of transmission stage for data encapsulation within a preset structure that is concatenated together with the following members:
+
+bitset<> header 	->	sequence number of the data frame
+bitset<> data			->	4 character data encapsulated from ascii
+bitset<> trailer	->	generated checksum that may or may not be subject to gremlin_checksum()
+string data_frame	->	the concatenated frame consisting of a header, payload, and trailer
+
+Where each bitset member is a cast to binary representations which are then concatenated into an 8 byte long binary string under data_frame. The struct also contains string representations of the binary members above which allow for debugging of information stored and passed into the struct itself.
+
+char generate_random_ascii();
+A function representing the pseudo-random choice of the predefined alphanumeric character array which generates seeded values for transmission.
+
+@param null
+@return an alphanumeric character from the statically defined choice array.
+
+int generate_random_number(int low, int high);
+Pseudo-random number generation for a range where the parameters passed are the upper and lower values for seeding ascii generation.
+
+@param int low -> the lower limit of the range selection
+@param int high -> the upper limit of the range selection
+@return -> an integer value pseudo-randomly chosen from between low and high.
+
+string generate_random_string();
+Utilises the generate_random_ascii() function to return 1024 seeded values which are stored in a temporary holder.
+
+@param null
+@return a 1024 long pseudo-randomly generated alphanumeric character selection.
+
+string gremlin_checksum(bitset<TRAILER_SIZE_BITS> data);
+Takes a parameter of ascii characters, converts the given characters to their binary equivalents, and returns the remainder under the CRC 32 checksum where the chance of generating bit flips is a seeded process which has a ~20% chance of occurring on each subsequent encoding.
+
+@param bitset<> data -> the data from which the checksum can be seeded and generated
+@return the CRC 32 checksum for the given parameter of data
+
+string get_allocated_ip(struct sockaddr_in addr);
+Takes the given socket address struct passed, and returns its IPv4 equivalent for the given machine.
+
+@param struct sockaddr_in addr -> AF_INET representation of the allocated socket address.
+@return a character array of IPv4 type for the machine's local address
+
+string get_data();
+Helper function to open a given *.txt file and return its contents into a buffer for use.
+
+@param null
+@return a file's contents for use in transmission
+
+bitset<HEADER_SIZE_BITS> generate_header(int sequenceNumber);
+Takes the parameter of a sequence number for a given data packet and returns its representation in binary.
+
+@param int sequenceNumber -> the given packet number for the data packet undergoing transmission.
+@return the binary representation of the data packet's sequence number in the binary base system.
+
+bitset<DATA_SIZE_BITS> generate_data(string data);
+Takes the parameter of ascii characters to be encoded and returns their representation under a given size in binary representation.
+
+@param string data -> the payload of alphanumeric character to be encoded in binary representation
+@return the binary representation of the payload in its binary representation from ascii
+
+bitset<TRAILER_SIZE_BITS> generate_checksum(string data, int length);
+Takes the conditional parameters of data to be encoded as well as its length, and returns a checksum under the CRC 32 algorithm checksum.
+
+@param string data -> alphanumeric characters used to generate the appropriate checksum
+@param int length -> length of the given characters to be encoded to a checksum representation
+@return the checksum of the given characters in the binary representation
+
+bitset<TRAILER_SIZE_BITS> generate_trailer(string data);
+A top level, cascading function which relies on the output of its child functions in order to act as a parent, encapsulating function which invokes trailer checksum generation through taking returned values as the parent function's parameter. Beforehand, the function prepares the data to be passed by reverse-encoding the data passed into the appropriate representation of binary from ascii.
+
+@usage return bitset<TRAILER_SIZE_BITS>(gremlin_checksum(generate_checksum(data_concat, data_concat.length())));
+@param string data -> the data to be packaged
+@return the checksum given the output of the other parameters in a cascading format
+
+void generate_output_file();
+Helper function to generate a *.txt file that stores the output of the character generation functions for use in transmission.
+
+@param null
+@return null
+
+void split_data(string data);
+Helper function to split the given 1024 long character array into packets of length 4 such that for 1024 characters, 256 character packet elements each of length 4 are generated of IDs 0 to 255.
+
+@usage [0:xxxx][1:xxxx]...[255:xxxx]
+@param null
+@return null
+
+void open_socket();
+Kills any live connections and opens a UDP connection for the client to connect to the server's IP and port.
+
+@param null
+@return null
+
+void close_connection();
+Kills any connections on the client's socket.
+
+@param null
+@return null
+
+void display_connection_info();
+Displays the connection information for the IP and server being connected to by the client.
+
+@param null
+@return null
+
+void send_data(int sequenceNumber, string data_packet);
+Calls appropriate socket handling, and sends the given data packet to the server.
+
+@param int sequenceNumber -> debug information to display the current packet being sent on the UI
+@param string data_packet -> encapsulated packet of binary information being sent to the server
+@throws exception on send errors and kills the connection
+@return null
+
+void receive_echo();
+Opens a listener on a given IP and port in order to receive information on the integrity of the sent packet to the server, and act accordingly depending on its reception of good or bad for the packet sent.
+
+@param null
+@return null
+
+void receive_ack(int sequenceNumber, string data);
+Instantiation of handling if a packet's echo is good or bad. If bad, another packet is generated which has a chance of being corrupted by the gremlin function, else the next packet is generated and sent to the server until the last packet is reached.
+
+@param int sequenceNumber -> the debug information for the packet sequence number for UI
+@param string data -> the data packet regenerated and reencapsulated.
+@return null
+
+bool hasEnding (string const &data, string const &regex);
+Boolean test to return whether or not the current string contains the given regex for the given string
+
+@param string data -> data to be analysed for string regex
+@param string regex -> regex for analysis
+@return true given the regex exists at the end of the given string
+
+string stuff_bits(string data);
+Takes the parameter of a string to be stuffed and returns the string in its stuffed format ready for transmission with a given redundancy.
+
+@usage "0111110" -> "01111010"
+@param data -> raw data to be stuffed
+@return the stuffed data in raw format
+
+string pad(string data);
+Given a packet less than the maximum packet length, the packet is padded with post-affixed 0s until the maximum packet length is achieved
+
+@param data -> the data to be padded
+@return the padded data with respect to the maximum packet length
