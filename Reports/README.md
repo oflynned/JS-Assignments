@@ -13,5 +13,5 @@
 ## ST2004 Project 1
 70/100
 
-## ST2004 Project 1
+## ST2004 Project 2
 70/100
